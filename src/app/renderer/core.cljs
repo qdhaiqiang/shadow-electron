@@ -4,6 +4,27 @@
 
 (enable-console-print!)
 
+(defonce sdk (js/require "@jitsi/electron-sdk"))
+
+(def domain "meet.jit.si")
+
+(def options
+  #js
+  {:roomName "room-name"
+   :width 700
+   :height 600
+   :parentNode (.querySelector js/document "#app-container")
+   :lang "en"
+   })
+
+(def api (new js/JitsiMeetExternalAPI domain options))
+
+(defn create-meeting
+  "创建会议,参加会议"
+  [room-name]
+  (new js/JitsiMeetExternalAPI domain (options room-name)))
+
+
 (defonce state (atom 0))
 
 (defn root-component []

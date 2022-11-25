@@ -16,6 +16,7 @@
   "author": "Ahonn Jiang <ahonn95@outlook.com>",
   "license": "MIT",
   "dependencies": {
+    "@jitsi/electron-sdk": "^3.0.16",
     "electron": "^16.0.7",
     "electron-packager": "^15.4.0",
     "react": "^17.0.2",
